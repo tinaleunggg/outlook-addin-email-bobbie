@@ -13,6 +13,16 @@ Office.onReady((info) => {
   }
 });
 
+Office.context.mailbox.item.getSharedPropertiesAsync((result) => {
+  if (result.status === Office.AsyncResultStatus.Failed) {
+    console.error("The current folder or mailbox isn't shared.");
+    return;
+  }
+  const sharedProperties = result.value;
+  console.log(`Owner: ${sharedProperties.owner}`);
+  console.log(`Permissions: ${sharedProperties.delegatePermissions} `);
+});
+
 export async function run() {
   /**
    * Insert your Outlook code here

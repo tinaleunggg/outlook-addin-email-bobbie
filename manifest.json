@@ -35,6 +35,10 @@
                 {
                     "name": "MailboxItem.Read.User",
                     "type": "Delegated"
+                },
+                {
+                    "name": "Mailbox.SharedFolder",
+                    "type": "Delegated"
                 }
             ]
         }
